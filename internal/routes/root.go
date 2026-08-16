@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"net/http"
 
-    "github.com/IBM/fp-go/v2/io"
 	"github.com/gorilla/mux"
 )
 
@@ -28,11 +27,9 @@ import (
 // 	fmt.Println(option.GetOrElse(lazy.Of("No value"))(result)) // Output: Positive: 42
 // }
 
-func RootPage() {
-	return io.FromIO(func(w http.ResponseWriter, r *http.Request) {
-		// an example API handler
-		json.NewEncoder(w).Encode(map[string]bool{"ok": true})
-	})
+func RootPage(w http.ResponseWriter, r *http.Request) {
+	// an example API handler
+	json.NewEncoder(w).Encode(map[string]bool{"ok": true})
 }
 
 func NewRouter() *mux.Router {
