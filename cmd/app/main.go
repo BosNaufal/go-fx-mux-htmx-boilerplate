@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"log"
 	"net/http"
 	"time"
 
@@ -32,6 +33,7 @@ func NewHTTPServer(lc fx.Lifecycle, router *mux.Router) *http.Server {
 			return nil
 		},
 		OnStop: func(ctx context.Context) error {
+			log.Println("shutting down...")
 			return srv.Shutdown(ctx)
 		},
 	})
