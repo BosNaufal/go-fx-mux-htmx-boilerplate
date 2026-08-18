@@ -15,7 +15,7 @@ func RootPage(w http.ResponseWriter, r *http.Request) {
 
 // Ref: https://medium.com/@uygaroztcyln/clean-ui-with-gos-html-templates-base-partials-and-funcmaps-4915296c9097
 func TemplatePage(w http.ResponseWriter, r *http.Request) {
-	err := helpers.RenderPageWithLayout(w, "base_layout.html", "home.html", map[string]interface{}{
+	err := helpers.RenderPage(w, "home.html", map[string]interface{}{
 		"someData": "someData to render",
 	})
 

@@ -27,8 +27,18 @@ func renderPageHTML(pageFileName string) *template.Template {
 	return tmpl
 }
 
+// When need custom layout
 func RenderPageWithLayout(writer io.Writer, layoutName string, absolutePathToPageHTML string, data any) error {
 	var tmpl = renderPageHTML(absolutePathToPageHTML)
 	err := tmpl.ExecuteTemplate(writer, layoutName, data)
+	return err
+}
+
+var defaultLayout = "base_layout.html"
+
+// Using default layout
+func RenderPage(writer io.Writer, absolutePathToPageHTML string, data any) error {
+	var tmpl = renderPageHTML(absolutePathToPageHTML)
+	err := tmpl.ExecuteTemplate(writer, defaultLayout, data)
 	return err
 }
