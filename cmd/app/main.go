@@ -26,10 +26,13 @@ func NewHTTPServer(lc fx.Lifecycle, router *mux.Router) *http.Server {
 	lc.Append(fx.Hook{
 		OnStart: func(ctx context.Context) error {
 			fmt.Println("Starting HTTP server at", srv.Addr)
-			err := srv.ListenAndServe()
-			if err != nil {
-				return err
-			}
+			// ref: https://github.com/uber-go/fx/issues/627#issuecomment-399235227
+			go func() {
+				err := srv.ListenAndServe()
+				if err != nil {
+					log.Fatal(err)
+				}
+			}()
 			return nil
 		},
 		OnStop: func(ctx context.Context) error {
@@ -42,9 +45,10 @@ func NewHTTPServer(lc fx.Lifecycle, router *mux.Router) *http.Server {
 }
 
 func main() {
-	fx.New(
+	app := fx.New(
 		fx.Provide(routes.NewRouter),
 		fx.Provide(NewHTTPServer),
 		fx.Invoke(func(*http.Server) {}),
-	).Run()
+	)
+	app.Run()
 }

@@ -81,6 +81,7 @@ func ParseTemplateWithinDir(viewDir string) *template.Template {
 	return tmpl
 }
 
+// Ref: https://medium.com/@uygaroztcyln/clean-ui-with-gos-html-templates-base-partials-and-funcmaps-4915296c9097
 func TemplatePage(w http.ResponseWriter, r *http.Request) {
 	var viewDir, _ = filepath.Abs("templates/")
 	var tmpl = ParseTemplateWithinDir(viewDir)
