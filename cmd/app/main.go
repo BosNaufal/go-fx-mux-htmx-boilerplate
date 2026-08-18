@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/BosNaufal/go-fx-mux-htmx-boilerplate/internal/config"
 	"github.com/BosNaufal/go-fx-mux-htmx-boilerplate/internal/routes"
 	"github.com/gorilla/mux"
 	"go.uber.org/fx"
@@ -14,10 +15,10 @@ import (
 
 // NewHTTPServer builds an HTTP server that will begin serving requests
 // when the Fx application starts.
-func NewHTTPServer(lc fx.Lifecycle, router *mux.Router) *http.Server {
+func NewHTTPServer(lc fx.Lifecycle, appConfig *config.AppConfig, router *mux.Router) *http.Server {
 	srv := &http.Server{
 		Handler: router,
-		Addr:    "0.0.0.0:8000",
+		Addr:    fmt.Sprintf("0.0.0.0:%s", appConfig.Port),
 		// Good practice: enforce timeouts for servers you create!
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
@@ -46,6 +47,7 @@ func NewHTTPServer(lc fx.Lifecycle, router *mux.Router) *http.Server {
 
 func main() {
 	app := fx.New(
+		fx.Provide(config.NewConfigProvider),
 		fx.Provide(routes.NewRouter),
 		fx.Provide(NewHTTPServer),
 		fx.Invoke(func(*http.Server) {}),

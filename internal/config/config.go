@@ -4,9 +4,10 @@ import (
 	"fmt"
 
 	"github.com/spf13/viper"
+	"go.uber.org/fx"
 )
 
-type EnvConfig struct {
+type AppConfig struct {
 	DatabaseName     string
 	DatabaseHost     string
 	DatabaseUser     string
@@ -17,7 +18,7 @@ type EnvConfig struct {
 	Port             string
 }
 
-func ReadConfigYaml() *EnvConfig {
+func ReadConfigYaml() *AppConfig {
 	viper.SetConfigName("config")         // name of config file (without extension)
 	viper.SetConfigType("yaml")           // REQUIRED if the config file does not have the extension in the name
 	viper.AddConfigPath("/etc/appname/")  // path to look for the config file in
@@ -28,7 +29,7 @@ func ReadConfigYaml() *EnvConfig {
 		panic(fmt.Errorf("fatal error config file: %w", err))
 	}
 
-	config := EnvConfig{
+	config := AppConfig{
 		DatabaseName:     viper.GetString("DATABASE_NAME"),
 		DatabaseHost:     viper.GetString("DATABASE_HOST"),
 		DatabaseUser:     viper.GetString("DATABASE_USER"),
@@ -38,4 +39,10 @@ func ReadConfigYaml() *EnvConfig {
 		Port:             viper.GetString("PORT"),
 	}
 	return &config
+}
+
+// NewHTTPServer builds an HTTP server that will begin serving requests
+// when the Fx application starts.
+func NewConfigProvider(lc fx.Lifecycle) *AppConfig {
+	return ReadConfigYaml()
 }
