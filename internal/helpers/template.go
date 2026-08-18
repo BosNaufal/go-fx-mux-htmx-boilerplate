@@ -1,17 +1,33 @@
 package helpers
 
 import (
-	"text/template"
+	"html/template"
+	"io"
+	"path/filepath"
 
 	"github.com/repeale/fp-go"
 )
 
-// we only need call this once.
-func ParseTemplateWithinDir(viewDir string) *template.Template {
-	allFiles := WalkingReadDir(viewDir)
-	allTemplateFiles := fp.Map(func(a SimpleDirEntry) string {
-		return a.FullPath
-	})(allFiles)
-	tmpl := template.Must(template.ParseFiles(allTemplateFiles...))
+func parseTemplateFiles(filepaths []string) *template.Template {
+	tmpl := template.Must(template.ParseFiles(filepaths...))
 	return tmpl
+}
+
+func renderPageHTML(absolutePathToPageHTML string) *template.Template {
+	var layoutDir, _ = filepath.Abs("templates/layouts")
+
+	layoutFiles := fp.Pipe2(
+		WalkingReadDir,
+		fp.Map(SimpleDirEntryToFilePathString),
+	)(layoutDir)
+
+	var pageTargetPath, _ = filepath.Abs(absolutePathToPageHTML)
+	var tmpl = parseTemplateFiles(append(layoutFiles, pageTargetPath))
+	return tmpl
+}
+
+func RenderPageWithLayout(writer io.Writer, layoutName string, absolutePathToPageHTML string, data any) error {
+	var tmpl = renderPageHTML(absolutePathToPageHTML)
+	err := tmpl.ExecuteTemplate(writer, layoutName, data)
+	return err
 }

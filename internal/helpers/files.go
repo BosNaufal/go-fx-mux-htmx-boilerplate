@@ -40,3 +40,7 @@ func WalkingReadDir(dir string) []SimpleDirEntry {
 		return append(acc, curr)
 	}, []SimpleDirEntry{})(simpleEntries)
 }
+
+func SimpleDirEntryToFilePathString(dirEntry SimpleDirEntry) string {
+	return dirEntry.FullPath
+}

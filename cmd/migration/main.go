@@ -6,7 +6,7 @@ import (
 
 	"github.com/amacneil/dbmate/v2/pkg/dbmate"
 	_ "github.com/amacneil/dbmate/v2/pkg/driver/postgres"
-	infra "gitlab.com/bosnaufal/bos-ai-search/internal/infrastructures"
+	"gitlab.com/bosnaufal/bos-ai-search/internal/infra"
 )
 
 func MigrateSeed(dbmateInstance *dbmate.DB) error {
