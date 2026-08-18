@@ -4,11 +4,12 @@ import (
 	"net/http"
 
 	"github.com/BosNaufal/go-fx-mux-htmx-boilerplate/internal/helpers"
+	"github.com/BosNaufal/go-fx-mux-htmx-boilerplate/internal/views"
 )
 
 // Ref: https://medium.com/@uygaroztcyln/clean-ui-with-gos-html-templates-base-partials-and-funcmaps-4915296c9097
 func RootPage(w http.ResponseWriter, r *http.Request) {
-	err := helpers.RenderPage(w, "home.html", map[string]interface{}{
+	err := views.RenderPage(w, "home.html", map[string]interface{}{
 		"someData": "someData to render",
 	})
 

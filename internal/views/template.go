@@ -1,10 +1,11 @@
-package helpers
+package views
 
 import (
 	"html/template"
 	"io"
 	"path/filepath"
 
+	"github.com/BosNaufal/go-fx-mux-htmx-boilerplate/internal/helpers"
 	"github.com/repeale/fp-go"
 )
 
@@ -17,8 +18,8 @@ func renderPageHTML(pageFileName string) *template.Template {
 	var layoutDir, _ = filepath.Abs("templates/layouts")
 
 	layoutFiles := fp.Pipe2(
-		WalkingReadDir,
-		fp.Map(SimpleDirEntryFullPath),
+		helpers.WalkingReadDir,
+		fp.Map(helpers.SimpleDirEntryFullPath),
 	)(layoutDir)
 
 	var pageDir, _ = filepath.Abs("templates/pages")
