@@ -38,6 +38,7 @@ func RenderPageWithLayout(writer io.Writer, layoutName string, absolutePathToPag
 var defaultLayout = "base_layout.html"
 
 // Using default layout
+// Ref: https://medium.com/@uygaroztcyln/clean-ui-with-gos-html-templates-base-partials-and-funcmaps-4915296c9097
 func RenderPage(writer io.Writer, absolutePathToPageHTML string, data any) error {
 	var tmpl = renderPageHTML(absolutePathToPageHTML)
 	err := tmpl.ExecuteTemplate(writer, defaultLayout, data)
