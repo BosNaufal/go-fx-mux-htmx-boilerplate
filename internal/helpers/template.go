@@ -13,7 +13,7 @@ func parseTemplateFiles(filepaths []string) *template.Template {
 	return tmpl
 }
 
-func renderPageHTML(absolutePathToPageHTML string) *template.Template {
+func renderPageHTML(pageFileName string) *template.Template {
 	var layoutDir, _ = filepath.Abs("templates/layouts")
 
 	layoutFiles := fp.Pipe2(
@@ -21,7 +21,8 @@ func renderPageHTML(absolutePathToPageHTML string) *template.Template {
 		fp.Map(SimpleDirEntryFullPath),
 	)(layoutDir)
 
-	var pageTargetPath, _ = filepath.Abs(absolutePathToPageHTML)
+	var pageDir, _ = filepath.Abs("templates/pages")
+	var pageTargetPath = filepath.Join(pageDir, pageFileName)
 	var tmpl = parseTemplateFiles(append(layoutFiles, pageTargetPath))
 	return tmpl
 }
