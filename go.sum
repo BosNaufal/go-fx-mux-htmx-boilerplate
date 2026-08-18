@@ -1,11 +1,7 @@
 filippo.io/edwards25519 v1.2.0 h1:crnVqOiS4jqYleHd9vaKZ+HKtHfllngJIiOpNpoJsjo=
 filippo.io/edwards25519 v1.2.0/go.mod h1:xzAOLCNug/yB62zG1bQ8uziwrIqIuxhctzJT18Q77mc=
-github.com/IBM/fp-go/v2 v2.3.111 h1:JoE0mieoTMQifCoT8S9N4PBvjcnAWA1fu+h061dGtxc=
-github.com/IBM/fp-go/v2 v2.3.111/go.mod h1:46uEuyJFAq1wrOz4gec/8LGVFdsvxjCeDdAXJF0jpFg=
 github.com/amacneil/dbmate/v2 v2.35.0 h1:Dl14R83a7VQ8liKXymkmz4q7uyRU6QCRDcVkJDECX9E=
 github.com/amacneil/dbmate/v2 v2.35.0/go.mod h1:92A1lNjnQ+BiLGpwFSF9OpYwbSz8hAwpiMb5EyDL2y0=
-github.com/dannyvankooten/extemplate v0.0.0-20221206123735-ea3f2b2b17ac h1:XYRFfWjEyxK41LxCSMwaWe23gVMM8OoFnBVpPXYmyzA=
-github.com/dannyvankooten/extemplate v0.0.0-20221206123735-ea3f2b2b17ac/go.mod h1:64FAo5IpKaWzGExw1bQGujZRd6/55A8QUHuJbZZzOaI=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

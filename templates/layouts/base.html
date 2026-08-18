@@ -2,20 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Testing Unpolly</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/unpoly@3.11.0/unpoly.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/unpoly@3.11.0/unpoly-bootstrap5.min.css"
-    />
+    <title>HTMX Basic</title>
   </head>
   <body>
-    <h1>Another Content!</h1>
-
-    <script src="https://cdn.jsdelivr.net/npm/unpoly@3.11.0/unpoly.min.js"></script>
+    <h1>Base Layout Content</h1>
+    {{block "content" .}}{{end}}
+    <script
+      src="https://cdn.jsdelivr.net/npm/htmx.org@4.0.0-beta6/dist/htmx.min.js"
+      integrity="sha384-6lyVbhrs13b9z7mLOpt/N6R76rtkEBWgCjAXRs/DSWyi2AMnQSs10ijWk+PI8n7W"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="

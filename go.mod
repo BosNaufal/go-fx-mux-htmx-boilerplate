@@ -4,7 +4,6 @@ go 1.26.3
 
 require (
 	github.com/amacneil/dbmate/v2 v2.35.0
-	github.com/dannyvankooten/extemplate v0.0.0-20221206123735-ea3f2b2b17ac
 	github.com/gorilla/mux v1.8.1
 	github.com/spf13/viper v1.21.0
 	go.uber.org/fx v1.24.0
@@ -13,7 +12,6 @@ require (
 )
 
 require (
-	github.com/IBM/fp-go/v2 v2.3.111
 	github.com/fsnotify/fsnotify v1.9.0 // indirect
 	github.com/go-viper/mapstructure/v2 v2.4.0 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
