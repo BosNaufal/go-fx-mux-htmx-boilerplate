@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/BosNaufal/go-fx-mux-htmx-boilerplate/internal/routes"
 	"github.com/gorilla/mux"
-	"gitlab.com/bosnaufal/bos-ai-search/internal/routes"
 	"go.uber.org/fx"
 )
 

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/BosNaufal/go-fx-mux-htmx-boilerplate/internal/infra"
 	"github.com/amacneil/dbmate/v2/pkg/dbmate"
 	_ "github.com/amacneil/dbmate/v2/pkg/driver/postgres"
-	"gitlab.com/bosnaufal/bos-ai-search/internal/infra"
 )
 
 func MigrateSeed(dbmateInstance *dbmate.DB) error {
