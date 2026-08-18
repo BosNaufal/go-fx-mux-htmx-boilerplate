@@ -18,7 +18,7 @@ func renderPageHTML(absolutePathToPageHTML string) *template.Template {
 
 	layoutFiles := fp.Pipe2(
 		WalkingReadDir,
-		fp.Map(SimpleDirEntryToFilePathString),
+		fp.Map(SimpleDirEntryFullPath),
 	)(layoutDir)
 
 	var pageTargetPath, _ = filepath.Abs(absolutePathToPageHTML)
