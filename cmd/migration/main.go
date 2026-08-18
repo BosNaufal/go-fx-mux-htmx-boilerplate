@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 
+	"github.com/BosNaufal/go-fx-mux-htmx-boilerplate/internal/config"
 	"github.com/BosNaufal/go-fx-mux-htmx-boilerplate/internal/infra"
 	"github.com/amacneil/dbmate/v2/pkg/dbmate"
 	_ "github.com/amacneil/dbmate/v2/pkg/driver/postgres"
@@ -55,12 +57,14 @@ func main() {
 
 	fmt.Println("migration type", migrationType)
 
+	appConfig := config.ReadConfigYaml()
+
 	dbmateInstance := infra.GetSQLStoreMigration(
-		"string",
-		"string",
-		"string",
-		"string",
-		"string",
+		appConfig.DatabaseHost,
+		appConfig.DatabaseUser,
+		appConfig.DatabasePassword,
+		appConfig.DatabaseName,
+		appConfig.DatabasePort,
 	)
 
 	switch os.Args[1] {
@@ -76,6 +80,8 @@ func main() {
 	}
 
 	if err != nil {
-		fmt.Println("%#v", err)
+		log.Fatal(err)
 	}
+
+	fmt.Println("Migration Success!")
 }
