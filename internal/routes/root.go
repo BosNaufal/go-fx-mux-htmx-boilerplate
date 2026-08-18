@@ -19,7 +19,7 @@ func TemplatePage(w http.ResponseWriter, r *http.Request) {
 	})
 
 	if err != nil {
-		helpers.ResponseString("something went wrong")
+		helpers.ResponseString(w, "something went wrong")
 		return
 	}
 }
