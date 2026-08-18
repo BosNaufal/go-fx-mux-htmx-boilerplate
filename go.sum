@@ -1,11 +1,11 @@
 filippo.io/edwards25519 v1.2.0 h1:crnVqOiS4jqYleHd9vaKZ+HKtHfllngJIiOpNpoJsjo=
 filippo.io/edwards25519 v1.2.0/go.mod h1:xzAOLCNug/yB62zG1bQ8uziwrIqIuxhctzJT18Q77mc=
-github.com/IBM/fp-go v1.1.84 h1:Uq8SWCpRLVuatOcJveCHOn0RHGN0UxYNugAcdlFl3P4=
-github.com/IBM/fp-go v1.1.84/go.mod h1:xQx8D6UU4EDtyYmR99rVYVyLpC4rNYXLl/l5ye8KfrE=
-github.com/IBM/fp-go/v2 v2.3.110 h1:e55HQIAl7jkBm/1jf4NYDgBbIblF6KPlB3zjuWGmNIA=
-github.com/IBM/fp-go/v2 v2.3.110/go.mod h1:0Q2D4IhQJgOUj4xkDN7D0gDwt3p+e1e0v0zXYuyMvfM=
+github.com/IBM/fp-go/v2 v2.3.111 h1:JoE0mieoTMQifCoT8S9N4PBvjcnAWA1fu+h061dGtxc=
+github.com/IBM/fp-go/v2 v2.3.111/go.mod h1:46uEuyJFAq1wrOz4gec/8LGVFdsvxjCeDdAXJF0jpFg=
 github.com/amacneil/dbmate/v2 v2.35.0 h1:Dl14R83a7VQ8liKXymkmz4q7uyRU6QCRDcVkJDECX9E=
 github.com/amacneil/dbmate/v2 v2.35.0/go.mod h1:92A1lNjnQ+BiLGpwFSF9OpYwbSz8hAwpiMb5EyDL2y0=
+github.com/dannyvankooten/extemplate v0.0.0-20221206123735-ea3f2b2b17ac h1:XYRFfWjEyxK41LxCSMwaWe23gVMM8OoFnBVpPXYmyzA=
+github.com/dannyvankooten/extemplate v0.0.0-20221206123735-ea3f2b2b17ac/go.mod h1:64FAo5IpKaWzGExw1bQGujZRd6/55A8QUHuJbZZzOaI=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -45,6 +45,8 @@ github.com/pelletier/go-toml/v2 v2.2.4 h1:mye9XuhQ6gvn5h28+VilKrrPoQVanw5PMw/TB0
 github.com/pelletier/go-toml/v2 v2.2.4/go.mod h1:2gIqNv+qfxSVS7cM2xJQKtLSTLUE9V8t9Stt+h56mCY=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+github.com/repeale/fp-go v0.11.1 h1:Q/e+gNyyHaxKAyfdbBqvip3DxhVWH453R+kthvSr9Mk=
+github.com/repeale/fp-go v0.11.1/go.mod h1:4KrwQJB1VRY+06CA+jTc4baZetr6o2PeuqnKr5ybQUc=
 github.com/rogpeppe/go-internal v1.9.0 h1:73kH8U+JUqXU8lRuOHeVHaa/SZPifC7BkcraZVejAe8=
 github.com/rogpeppe/go-internal v1.9.0/go.mod h1:WtVeX8xhTBvf0smdhujwtBcq4Qrzq/fJaraNFVN+nFs=
 github.com/sagikazarmark/locafero v0.11.0 h1:1iurJgmM9G3PA/I+wWYIOw/5SyBtxapeHDcg+AAIFXc=
