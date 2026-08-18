@@ -1,7 +1,6 @@
 package routes
 
 import (
-	"encoding/json"
 	"net/http"
 
 	"github.com/BosNaufal/go-fx-mux-htmx-boilerplate/internal/helpers"
@@ -10,7 +9,7 @@ import (
 
 func RootPage(w http.ResponseWriter, r *http.Request) {
 	// an example API handler
-	json.NewEncoder(w).Encode(map[string]bool{"ok": true})
+	helpers.ResponseJSON(w, map[string]bool{"ok": true})
 }
 
 // Ref: https://medium.com/@uygaroztcyln/clean-ui-with-gos-html-templates-base-partials-and-funcmaps-4915296c9097
@@ -20,7 +19,7 @@ func TemplatePage(w http.ResponseWriter, r *http.Request) {
 	})
 
 	if err != nil {
-		w.Write([]byte("error nih bous"))
+		helpers.ResponseString("something went wrong")
 		return
 	}
 }
