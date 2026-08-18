@@ -1,4 +1,4 @@
-module gitlab.com/bosnaufal/bos-ai-search
+module github.com/BosNaufal/go-fx-mux-htmx-boilerplate
 
 go 1.26.3
 

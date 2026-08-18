@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"github.com/BosNaufal/go-fx-mux-htmx-boilerplate/internal/helpers"
 	"github.com/gorilla/mux"
-	"gitlab.com/bosnaufal/bos-ai-search/internal/helpers"
 )
 
 func RootPage(w http.ResponseWriter, r *http.Request) {

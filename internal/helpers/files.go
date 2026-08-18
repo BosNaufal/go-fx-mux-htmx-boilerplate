@@ -13,7 +13,7 @@ type SimpleDirEntry struct {
 	isDir    bool
 }
 
-func simplifyOsDirEntry(dir string, entry os.DirEntry) SimpleDirEntry {
+func osDirEntryToSimpleDirEntry(dir string, entry os.DirEntry) SimpleDirEntry {
 	return SimpleDirEntry{
 		FullPath: filepath.Join(dir, entry.Name()),
 		Name:     entry.Name(),
@@ -23,7 +23,7 @@ func simplifyOsDirEntry(dir string, entry os.DirEntry) SimpleDirEntry {
 
 func readDirSimple(dir string) []SimpleDirEntry {
 	osEntries, _ := os.ReadDir(dir)
-	simplifyOsDirEntryCurrDir := fp.Curry2(simplifyOsDirEntry)(dir)
+	simplifyOsDirEntryCurrDir := fp.Curry2(osDirEntryToSimpleDirEntry)(dir)
 	return fp.Map(simplifyOsDirEntryCurrDir)(osEntries)
 }
 
@@ -41,6 +41,6 @@ func WalkingReadDir(dir string) []SimpleDirEntry {
 	}, []SimpleDirEntry{})(simpleEntries)
 }
 
-func SimpleDirEntryToFilePathString(dirEntry SimpleDirEntry) string {
+func SimpleDirEntryFullPath(dirEntry SimpleDirEntry) string {
 	return dirEntry.FullPath
 }
