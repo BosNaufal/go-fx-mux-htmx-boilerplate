@@ -1,0 +1,9 @@
+/* Ref: https://getbem.com/naming/ */
+.card {
+    border: var(--border-size-1) solid var(--gray-3);
+    box-shadow: var(--shadow-1);
+    border-radius: var(--radius-3);
+    padding-inline: var(--size-4);
+    padding-block: var(--size-3);
+    margin: var(--size-4);
+}
