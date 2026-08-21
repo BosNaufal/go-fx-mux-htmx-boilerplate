@@ -1,55 +1,39 @@
 {{define "content"}}
-<div class="main-searchbar">
+<form id="main-searchbar" hx-get="/" class="main-searchbar" hx-swap-oob="true">
   <input
+    name="q"
     class="main-searchbar__input"
     type="text"
     placeholder="Search something here..."
+    value="{{.SearchQuery}}"
   />
-</div>
-<div class="search-result">
-  <a href="#" class="search-result__item">
-    <h2 class="search-result__title">
-      Has AI Killed the Joy of Coding? How to Get It Back
-    </h2>
-    <p class="search-result__description">
-      AI hasn't killed the joy of coding, it's moved the craft up the stack.
-      Here's where problem-solving actually went, and how engineers can find it
-      again.
-    </p>
-    <div class="search-result__link">https://detailed.com/link/to/content</div>
-  </a>
-  <a href="#" class="search-result__item">
-    <h2 class="search-result__title">
-      Has AI Killed the Joy of Coding? How to Get It Back
-    </h2>
-    <p class="search-result__description">
-      AI hasn't killed the joy of coding, it's moved the craft up the stack.
-      Here's where problem-solving actually went, and how engineers can find it
-      again.
-    </p>
-    <div class="search-result__link">https://detailed.com/link/to/content</div>
-  </a>
-  <a href="#" class="search-result__item">
-    <h2 class="search-result__title">
-      Has AI Killed the Joy of Coding? How to Get It Back
-    </h2>
-    <p class="search-result__description">
-      AI hasn't killed the joy of coding, it's moved the craft up the stack.
-      Here's where problem-solving actually went, and how engineers can find it
-      again.
-    </p>
-    <div class="search-result__link">https://detailed.com/link/to/content</div>
-  </a>
-  <div>
-    <div class="card">
-      <div class="card__header">Card title</div>
-      <div class="card__body">
-        <p>Body content…</p>
-      </div>
-      <div class="card__footer">
-        <a href="#" class="button">Action</a>
-      </div>
+</form>
+
+<div id="ai-summary" class="card" hx-swap-oob="true">
+  <div class="card__inner">
+    <h4 class="card__header">AI Summary</h4>
+    <div class="card__body">
+      <p>
+        The last time you had a cheeseburger was too long ago. Try not to drool
+        when you think about the slightly charred, medium-rare meat nestled
+        between soft brioche, cradled in crisp iceberg lettuce and flavour
+        amplifying condiments. Why are you still reading this- go get a
+        cheeseburger.
+      </p>
     </div>
-    {{end}}
+    <div class="card__footer">
+      <a href="#" class="button">Read More</a>
+    </div>
   </div>
 </div>
+
+<div id="search-result" class="search-result" hx-swap-oob="true">
+  {{ range .Results }}
+  <a href="#" class="search-result__item">
+    <h2 class="search-result__title">{{ .Title }}</h2>
+    <p class="search-result__description">{{ .Description }}</p>
+    <div class="search-result__link">{{ .Link }}</div>
+  </a>
+  {{ end }}
+</div>
+{{end}}
